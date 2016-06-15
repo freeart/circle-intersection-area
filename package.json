@@ -10,7 +10,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/Fuzzyma/circle-intersection-area.git"
+    "url": "git+https://github.com/freeart/circle-intersection-area.git"
   },
   "keywords": [
     "circle",
@@ -19,11 +19,11 @@
   "author": "Ulrich-Matthias Schäfer",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/Fuzzyma/circle-intersection-area/issues"
+    "url": "https://github.com/freeart/circle-intersection-area/issues"
   },
-  "homepage": "https://github.com/Fuzzyma/circle-intersection-area#readme",
+  "homepage": "https://github.com/freeart/circle-intersection-area#readme",
   "dependencies": {
-    "circle2-lowdeps": "^1.0.1"
+    "circle2-lowdeps": "git+https://github.com/freeart/circle2-lowdeps.git"
   },
   "devDependencies": {
     "should": "^8.3.1",
