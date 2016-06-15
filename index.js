@@ -4,7 +4,7 @@
 
 var Circle = require('circle2-lowdeps')
 
-var circleIntersectionArea = function () {
+var circleIntersectionArea = function (_circles) {
   var circles = []
   var vertices = []
   var verticeCircleMap = []
@@ -14,23 +14,19 @@ var circleIntersectionArea = function () {
   var k
 
   // of only one circle given, no intersection possible
-  if (arguments.length < 2) {
+  if (_circles.length < 2) {
     return []
   }
 
   // create a circle obj for every circle given
-  for (i = arguments.length; i--;) {
+  for (i = _circles.length; i--;) {
     // we except [cx, cy, r]
-    if (arguments[i].length === 3) {
-      circles.push(
+      circles.push( 
         Circle(
-          {latitude: arguments[i].latitude, longitude: arguments[i].longitude},
-          arguments[i].radius
+          {latitude: _circles[i].latitude, longitude: _circles[i].longitude},
+          _circles[i].radius
         )
       )
-    } else {
-      throw new Error('Given circle has to be of form [cx, cy, r] or [[cx, cy], r]')
-    }
   }
 
   // intersect all circles with eachother
