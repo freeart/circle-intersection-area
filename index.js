@@ -24,16 +24,8 @@ var circleIntersectionArea = function () {
     if (arguments[i].length === 3) {
       circles.push(
         Circle(
-          [arguments[i][0], arguments[i][1]],
-          arguments[i][2]
-        )
-      )
-    // and [[cx, cy], r]
-    } else if (arguments[i].length === 2) {
-      circles.push(
-        Circle(
-          arguments[i][0],
-          arguments[i][1]
+          {latitude: arguments[i].latitude, longitude: arguments[i].longitude},
+          arguments[i].radius
         )
       )
     } else {
@@ -61,7 +53,7 @@ var circleIntersectionArea = function () {
   // make vertices unique
   for (i = -1, k = vertices.length; i++ < k;) {
     for (j = i + 1; j < vertices.length; ++j) {
-      if (vertices[i].equal(vertices[j])) {
+      if (vertices[i].latitude == vertices[j].latitude && vertices[i].longitude == vertices[j].longitude) {
         verticeCircleMap.splice(j, 1)
         vertices.splice(j--, 1)
       }
